@@ -1,0 +1,68 @@
+/* Layout base */
+.layout {
+    display: flex;
+    background-color: #303030 !important;
+    color: whitesmoke;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    /* background: #1e1e2f; */
+    background-color: #303030 !important;
+    color: white;
+    padding: 1rem;
+    transition: width 0.3s;
+}
+
+.sidebar.collapsed {
+    width: 70px;
+}
+
+.logo-sidebar{
+    max-width: 50px;
+}
+
+/* Main */
+.main {
+    margin-left: 240px;
+    width: 100%;
+    transition: margin-left 0.3s;
+}
+
+.main.collapsed {
+    margin-left: 70px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 240px;
+    right: 0;
+    height: 60px;
+    /* background: white; */
+    background-color: #303030 !important;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 1000;
+    transition: left 0.3s;
+}
+
+.main.collapsed .header {
+    left: 70px;
+}
+
+/* Content */
+.content {
+    margin-top: 60px;
+    padding: 1rem;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+}

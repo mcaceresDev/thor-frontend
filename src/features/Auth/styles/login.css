@@ -1,0 +1,15 @@
+.main-container{
+    background-color: #303030 !important;
+}
+
+.logo{
+    max-width: 150px;
+}
+
+.login-container {
+    width: 300px;
+}
+
+.input-transparent {
+    background-color: rgba(255, 255, 255, 0.76);
+}

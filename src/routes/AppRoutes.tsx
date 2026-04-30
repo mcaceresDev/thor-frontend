@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import MainLayout from '../layouts/MainLayout'
-import GensetDetailPage from '../features/Gensets/pages/GensetDetailPage'
+import GensetsPage from '../features/Gensets/pages/GensetsPage'
 import LoginPage from '../features/Auth/pages/LoginPage'
 import NotFoundPage from '../pages/NotFoundPage'
 import MonitoringDashboard from '../features/Monitoring/pages/MonitoringDashcboard'
@@ -20,7 +20,7 @@ export default function AppRoutes() {
             }
             > 
             {/* aca van las demas rutas */}
-            <Route path='/genset/:id' element={<GensetDetailPage />} />
+            <Route path='/genset/:id' element={<GensetsPage />} />
             <Route path='/monitoring/:id' element={<MonitoringDashboard />} />
             
         </Route>

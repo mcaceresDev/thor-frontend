@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GensetDetailPage = () => {
+const GensetsPage = () => {
   return (
     <div>
         <h2>Genset</h2>
@@ -10,4 +10,4 @@ const GensetDetailPage = () => {
   )
 }
 
-export default GensetDetailPage
+export default GensetsPage

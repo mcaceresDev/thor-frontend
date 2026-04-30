@@ -3,6 +3,7 @@ import MainLayout from '../layouts/MainLayout'
 import GensetDetailPage from '../features/Gensets/pages/GensetDetailPage'
 import LoginPage from '../features/Auth/pages/LoginPage'
 import NotFoundPage from '../pages/NotFoundPage'
+import MonitoringDashboard from '../features/Monitoring/pages/MonitoringDashcboard'
 
 export default function AppRoutes() {
   return (
@@ -20,6 +21,7 @@ export default function AppRoutes() {
             > 
             {/* aca van las demas rutas */}
             <Route path='/genset/:id' element={<GensetDetailPage />} />
+            <Route path='/monitoring/:id' element={<MonitoringDashboard />} />
             
         </Route>
 

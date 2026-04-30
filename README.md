@@ -19,3 +19,7 @@ pf	1   	0.99	0.97            0.99
 		
 
 S2 mantiene sus valores apagados hasta que se vaya la luz y entre el generador
+
+
+DESCARGA DE SVG (REPO BASTANTE COMPLETO)
+svgrepo-com

@@ -9,36 +9,48 @@ export default function MonitoringDashboard() {
 
             <HeaderGenset />
 
-            <GatewayPanel />
-
-
-            <div className="d-flex flex-column justify-content-between align-items-center">
-                <h4 className="my-3">Tanque Combustible</h4>
-                <TankGauge value={65} waveStyle={{ fill: "#ffc107" }} />
-
-                <div className="mt-3 w-100 text-center">
-                    <p className="fw-bold">Capacidad Total: 200Glns</p>
-                    <p className="fw-bold">Nivel Actual: 200Glns</p>
+            <div className="row my-5">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-8 overflow-scroll">
+                    <h3 className="my-3">Gateway Panel</h3>
+                    <hr />
+                    <GatewayPanel />
                 </div>
-                {/* <p>Nivel Actual   ≈  {capacity * (fuelLevel / 100)}</p> */}
+
+                <div className="col-12 col-sm-12 col-md-12 col-lg-4 d-flex flex-column justify-content-between align-items-center overflow-scroll">
+                    <h3 className="my-3">Tanque Combustible</h3>
+                    <TankGauge value={65} waveStyle={{ fill: "#ffc107" }} />
+
+                    <div className="mt-3 w-100 text-center">
+                        <p className="fw-bold">Capacidad Total: 200Glns</p>
+                        <p className="fw-bold">Nivel Actual: 200Glns</p>
+                    </div>
+                    {/* <p>Nivel Actual   ≈  {capacity * (fuelLevel / 100)}</p> */}
+                </div>
+
             </div>
 
 
-            <div className="p-3 text-center">
-                <h4>Revoluciones de Motor</h4>
-                <GaugeChart value={25} name="RPM" />
-            </div>
+
+            <div className="row my-5">
+                <h3>Indicadores de Motor</h3>
+                <hr />
+
+                <div className="col-12 col-lg-4 p-3 text-center">
+                    <h4>Revoluciones</h4>
+                    <GaugeChart value={25} name="RPM" />
+                </div>
 
 
-            <div className="p-3 text-center">
-                <h4>Temperatura de Motor</h4>
-                <GaugeChart value={55} name="°C" max={120} />
-            </div>
-            
-            
-            <div className="p-3 text-center">
-                <h4>Presión de Aceite</h4>
-                <GaugeChart value={25} name="KPa" max={120} />
+                <div className="col-12 col-lg-4 p-3 text-center">
+                    <h4>Temperatura</h4>
+                    <GaugeChart value={55} name="°C" max={120} />
+                </div>
+                
+                
+                <div className="col-12 col-lg-4 p-3 text-center">
+                    <h4>Presión de Aceite</h4>
+                    <GaugeChart value={25} name="KPa" max={120} />
+                </div>
             </div>
 
 

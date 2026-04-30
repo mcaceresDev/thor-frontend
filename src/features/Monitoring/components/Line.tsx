@@ -3,6 +3,10 @@ import { Building2, Factory } from 'lucide-react';
 import poleIcon from "../../../assets/img/torre-electrica2.svg"
 import thunderIcon from "../../../assets/img/energia-renovable.svg"
 import building from "../../../assets/img/edificio.svg"
+import GensetButton from "../../../assets/img/tilde.svg?react"
+import EdificioIcon from "../../../assets/img/edificio.svg?react"
+import TowerButton from "../../../assets/img/torre-electrica2.svg?react"
+import { Fab, SvgIcon } from '@mui/material';
 
 export const Line: React.FC<{ width?: number }> = (props) => {
     const { width } = props;
@@ -34,16 +38,24 @@ export const CircleStatus: React.FC<{ status: boolean }> = (props) => {
     );
 }
 
-
+// min width 540
+// max width 950
 const GenPanel = () => {
     return (
         <div className="d-flex flex-column my-4">
+            
             <div className='d-flex justify-content-between'>
-                <div className="rounded-circle p-2 bg-warning text-dark">
-                    <img src={poleIcon} alt="" style={{height: "50px"}}/>
+                <div className='d-flex flex-column justify-content-center align-items-center'>
+                    <p className='text-start'>Comercial</p>
+                    <Fab className='p-2 bg-warning'>
+                        <TowerButton width={60} height={60} />
+                    </Fab>
                 </div>
-                <div className="rounded-circle p-2 bg-warning text-dark">
-                    <img src={thunderIcon} alt="" style={{height: "50px"}}/>
+                <div className='d-flex flex-column justify-content-center align-items-center'>
+                    <p className='text-start'>Generador</p>
+                    <Fab className='p-2 bg-warning'>
+                        <GensetButton width={60} height={60} />
+                    </Fab>
                 </div>
             </div>
 
@@ -52,9 +64,10 @@ const GenPanel = () => {
                 <Line />
                 <CircleStatus status={false} />
                 <Line />
-                {/* <Building2 size={80}/> */}
-                {/* <Factory size={80} /> */}
-                <img src={building} alt="" style={{height: "50px"}}/>
+
+                <SvgIcon style={{ fontSize: 64 }}>
+                    <EdificioIcon />
+                </SvgIcon>
 
                 <Line />
                 <CircleStatus status={false} />

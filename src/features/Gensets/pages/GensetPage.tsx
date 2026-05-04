@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 import { fetchGensets, deleteGenset, openModal } from "../gensetSlice"
-import { gensetColumns } from "../helpers/projectColumns"
+import { gensetColumns } from "../helpers/gensetColumns"
 import type { Genset } from "../genset.types"
 import { Table } from "../../../components/Table"
 import { GensetModalForm } from "../components/GensetModalForm"
@@ -14,7 +14,6 @@ const GensetsPage = () => {
 
   useEffect(() => {
     dispatch(fetchGensets())
-    console.log(items);
 
   }, [dispatch])
 
@@ -23,7 +22,7 @@ const GensetsPage = () => {
   }
 
   const handleDelete = async(genset: Genset) => {
-    const confirmed = await showConfirmDelete("Deseas eliminar el proyecto", genset.name)
+    const confirmed = await showConfirmDelete("Deseas eliminar el generador", genset.name)
     if (confirmed) {
       dispatch(deleteGenset(genset.id))
     }

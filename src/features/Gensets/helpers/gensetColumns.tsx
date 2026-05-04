@@ -1,4 +1,3 @@
-// Codigo para definir las columnas de tanstack
 import type { ColumnDef } from "@tanstack/react-table";
 import type { Genset } from "../genset.types";
 import { Info, SquarePen, Trash } from "lucide-react";

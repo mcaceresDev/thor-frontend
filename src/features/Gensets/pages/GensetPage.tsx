@@ -1,11 +1,13 @@
 import { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 import { fetchGensets, deleteGenset, openModal } from "../gensetSlice"
-import { Table } from "../../../components/Table"
 import { gensetColumns } from "../helpers/projectColumns"
 import type { Genset } from "../genset.types"
+import { Table } from "../../../components/Table"
+import { GensetModalForm } from "../components/GensetModalForm"
+import { showConfirmDelete } from "../../../shared/alerts/alert.service"
 
-export const GensetTest = () => {
+const GensetsPage = () => {
   const dispatch = useAppDispatch()
 
   const { items, loading } = useAppSelector(state => state.gensets)
@@ -20,10 +22,14 @@ export const GensetTest = () => {
     dispatch(openModal(genset))
   }
 
-  const handleDelete = (genset: Genset) => {
-    if (confirm("¿Eliminar generador?")) {
+  const handleDelete = async(genset: Genset) => {
+    const confirmed = await showConfirmDelete("Deseas eliminar el proyecto", genset.name)
+    if (confirmed) {
       dispatch(deleteGenset(genset.id))
     }
+    // if (confirm("¿Eliminar generador?")) {
+    //   dispatch(deleteGenset(genset.id))
+    // }
   }
 
   return (
@@ -34,7 +40,7 @@ export const GensetTest = () => {
 
       </div>
       <button
-        className="btn btn-sm btn-outline-warning"
+        className="btn btn-sm btn-warning"
         onClick={() => dispatch(openModal(null))}
       >
         Agregar Nuevo
@@ -49,6 +55,10 @@ export const GensetTest = () => {
           onDelete: handleDelete
         })}
       />
+
+      <GensetModalForm />
     </div>
   )
 }
+
+export default GensetsPage

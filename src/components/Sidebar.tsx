@@ -24,9 +24,9 @@ const Sidebar = ({ collapsed }: Props) => {
 
       <nav>
         <ul className='list-unstyled'>
-          <li className='my-3'><Link to={"/gensets"}>{collapsed ? <EvCharger className='text-warning'/> : <span className=''><EvCharger className='me-3 text-warning'/> Generadores</span>}</Link></li>
-          <li className='my-3'><Link to={"/users"}>{collapsed ? <Users className='text-warning'/> : <span className=''><Users className='me-3 text-warning'/> Usuarios</span>}</Link></li>
-          <li className='my-3'><Link to={"/logs"}>{collapsed ? <ClipboardClock className='text-warning'/> : <span className=''><ClipboardClock className='me-3 text-warning'/> Logs</span>}</Link></li>
+          <li className='my-3'><Link className="text-decoration-none text-reset" to={"/gensets"}>{collapsed ? <EvCharger className='text-warning'/> : <span className=''><EvCharger className='me-3 text-warning'/> Generadores</span>}</Link></li>
+          <li className='my-3'><Link className="text-decoration-none text-reset" to={"/users"}>{collapsed ? <Users className='text-warning'/> : <span className=''><Users className='me-3 text-warning'/> Usuarios</span>}</Link></li>
+          <li className='my-3'><Link className="text-decoration-none text-reset" to={"/logs"}>{collapsed ? <ClipboardClock className='text-warning'/> : <span className=''><ClipboardClock className='me-3 text-warning'/> Logs</span>}</Link></li>
         </ul>
         {/* <a href="/genset/1">⚙️ {!collapsed && "Gensets"}</a>
         <a href="#">📊 {!collapsed && "Dashboard"}</a> */}

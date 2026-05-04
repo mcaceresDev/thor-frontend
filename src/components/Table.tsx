@@ -24,7 +24,7 @@ export function Table<T>({ data, columns }: Props<T>) {
         getPaginationRowModel: getPaginationRowModel()
     })
     return (
-        <div className='table-container table-responsive'>
+        <div className='table-container table-responsive' data-bs-theme="dark">
             <div className='py-3 d-flex justify-content-between'>
                 <input type="text" className='search-box form-control form-control-sm' placeholder='Buscar' value={globalFilter ?? ""} onChange={e => setGlobalFilter(e.target.value)} />
                 <select
@@ -84,9 +84,9 @@ export function Table<T>({ data, columns }: Props<T>) {
                 </tbody>
             </table>
             <div className="d-flex justify-content-between align-items-center mt-3">
-                <button className='btn btn-sm btn-outline-primary' onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage}>Anterior</button>
+                <button className='btn btn-sm btn-outline-warning' onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage}>Anterior</button>
                 <span>Página {table.getState().pagination.pageIndex + 1} de {" "} {table.getPageCount()}</span>
-                <button className='btn btn-sm btn-outline-primary' onClick={() => table.nextPage()} disabled={!table.getCanNextPage}>Siguiente</button>
+                <button className='btn btn-sm btn-outline-warning' onClick={() => table.nextPage()} disabled={!table.getCanNextPage}>Siguiente</button>
             </div>
         </div>
     )

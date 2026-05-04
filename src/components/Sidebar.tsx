@@ -1,23 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from "../assets/img/planta.png"
 import { ClipboardClock, EvCharger, Users } from 'lucide-react'
-
-// const Sidebar = () => {
-//   return (
-//     <aside className='main-sidebar px-2 py-3 border-end border-dark'>
-//       <span>GESTION</span>
-//       <hr />
-//       <p>Usuarios</p>
-//       <p>Equipos</p>
-//       <p>Roles</p>
-
-//       <span>PROYECTOS</span>
-//       <hr />
-//       <p>Servicios</p>
-//       <p>Estadísticas</p>
-//     </aside>
-//   )
-// }
 
 type Props = {
   collapsed: boolean
@@ -40,9 +24,9 @@ const Sidebar = ({ collapsed }: Props) => {
 
       <nav>
         <ul className='list-unstyled'>
-          <li className='my-3'>{collapsed ? <EvCharger className='text-warning'/> : <span className=''><EvCharger className='me-3 text-warning'/> Generadores</span>}</li>
-          <li className='my-3'>{collapsed ? <Users className='text-warning'/> : <span className=''><Users className='me-3 text-warning'/> Usuarios</span>}</li>
-          <li className='my-3'>{collapsed ? <ClipboardClock className='text-warning'/> : <span className=''><ClipboardClock className='me-3 text-warning'/> Logs</span>}</li>
+          <li className='my-3'><Link to={"/gensets"}>{collapsed ? <EvCharger className='text-warning'/> : <span className=''><EvCharger className='me-3 text-warning'/> Generadores</span>}</Link></li>
+          <li className='my-3'><Link to={"/users"}>{collapsed ? <Users className='text-warning'/> : <span className=''><Users className='me-3 text-warning'/> Usuarios</span>}</Link></li>
+          <li className='my-3'><Link to={"/logs"}>{collapsed ? <ClipboardClock className='text-warning'/> : <span className=''><ClipboardClock className='me-3 text-warning'/> Logs</span>}</Link></li>
         </ul>
         {/* <a href="/genset/1">⚙️ {!collapsed && "Gensets"}</a>
         <a href="#">📊 {!collapsed && "Dashboard"}</a> */}

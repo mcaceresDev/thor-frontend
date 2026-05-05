@@ -23,3 +23,72 @@ S2 mantiene sus valores apagados hasta que se vaya la luz y entre el generador
 
 DESCARGA DE SVG (REPO BASTANTE COMPLETO)
 svgrepo-com
+
+
+REFERENCIAS DE MOTOR DE GENERADORES
+=====================================================
+
+COOLANT_TEMPERATURE
+| Estado     | Rango      |
+| ---------- | ---------- |
+| 🔵 Frío    | < 60°C     |
+| 🟢 Normal  | 70 – 95°C  |
+| 🟡 Alto    | 95 – 105°C |
+| 🔴 Crítico | > 105°C    |
+
+
+ENGINE_SPEED
+| Estado       | Rango           |
+| ------------ | --------------- |
+| 🔵 Apagado   | 0               |
+| 🟢 Idle      | 600 – 900 RPM   |
+| 🟢 Operación | 1500 o 1800 RPM |
+| 🔴 Crítico   | > 2000 RPM      |
+
+
+OIL_PRESSURE
+| Estado    | Rango         |
+| --------- | ------------- |
+| 🔴 Bajo   | < 100 kPa     |
+| 🟡 Medio  | 100 – 250 kPa |
+| 🟢 Normal | 250 – 500 kPa |
+| 🔴 Alto   | > 600 kPa     |
+
+=======================================================================================
+
+Base OID = el prefijo común del árbol SNMP de un fabricante/dispositivo.
+
+Ejemplo:
+1.3.6.1.4.1.XXXXX
+
+1.3.6.1.4.1 = empresas privadas
+XXXXX = ID del fabricante
+
+
+consultas http a la direccion:
+http://inss-mg2-genset1.internal.inss.org/co_inst_mod_data.cgi
+
+{
+	"POST": {
+		"scheme": "http",
+		"host": "inss-mg2-genset1.internal.inss.org",
+		"filename": "/co_inst_mod_data.cgi",
+		"remote": {
+			"Dirección": "172.16.25.21:80"
+		}
+	}
+}
+
+Panel mains braker y gen braker available
+http://inss-mg2-genset1.internal.inss.org/co_inst_mod_xml.cgi
+
+{
+	"POST": {
+		"scheme": "http",
+		"host": "inss-mg2-genset1.internal.inss.org",
+		"filename": "/co_inst_mod_xml.cgi",
+		"remote": {
+			"Dirección": "172.16.25.21:80"
+		}
+	}
+}

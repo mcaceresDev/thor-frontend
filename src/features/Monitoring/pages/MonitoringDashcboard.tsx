@@ -102,19 +102,19 @@ export default function MonitoringDashboard() {
 
                 <div className="col-12 col-lg-4 p-3 text-center">
                     <h4>Revoluciones</h4>
-                    <GaugeChart value={rpm} name="RPM" />
+                    <GaugeChart value={rpm} name="RPM" max={1800}/>
                 </div>
 
 
                 <div className="col-12 col-lg-4 p-3 text-center">
                     <h4>Temperatura</h4>
-                    <GaugeChart value={temp} name="°C" max={120} />
+                    <GaugeChart value={temp} name="°C" max={100} />
                 </div>
 
 
                 <div className="col-12 col-lg-4 p-3 text-center">
                     <h4>Presión de Aceite</h4>
-                    <GaugeChart value={oil} name="KPa" max={120} />
+                    <GaugeChart value={oil} name="KPa" max={600} />
                 </div>
             </div>
 
@@ -128,3 +128,9 @@ export default function MonitoringDashboard() {
 // "engineBattery", unit: "V" 
 // "engineStarts",  unit: "Cantidad"
 // "engineHours",   unit: "Hours/Min"
+
+// CONSIDERAR INCLUIR ESTOS CAMPOS EN TABLA TEMPLATE_OIDS
+// min_value
+// max_value
+// unit
+// scale

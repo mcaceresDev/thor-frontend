@@ -1,8 +1,4 @@
 import React from 'react'
-import { Building2, Factory } from 'lucide-react';
-import poleIcon from "../../../assets/img/torre-electrica2.svg"
-import thunderIcon from "../../../assets/img/energia-renovable.svg"
-import building from "../../../assets/img/edificio.svg"
 import GensetButton from "../../../assets/img/tilde.svg?react"
 import EdificioIcon from "../../../assets/img/edificio.svg?react"
 import TowerButton from "../../../assets/img/torre-electrica2.svg?react"
@@ -38,8 +34,6 @@ export const CircleStatus: React.FC<{ status: boolean }> = (props) => {
     );
 }
 
-// min width 540
-// max width 950
 const GenPanel = () => {
     return (
         <div className="d-flex flex-column my-4">

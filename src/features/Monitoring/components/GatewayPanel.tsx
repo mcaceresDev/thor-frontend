@@ -7,22 +7,18 @@ import LightPoleButton from "../../../assets/img/btnTest.svg?react"
 import AutoButton from "../../../assets/img/btnAuto.svg?react"
 import SilentButton from "../../../assets/img/megaphone-off.svg?react"
 // MUI ICONS
-import { Fab, SvgIcon } from '@mui/material'
+import { Fab } from '@mui/material'
 import "../styles/gatewayPanel.css"
+// COMPONENTS
+import GenPanel from './GenPanel'
 
-
-import torre from "../../../assets/img/torre.svg"
-// LUCIDE ICONS
-import { Building2, Circle, MegaphoneOff, Minus, Pointer, Power, PowerOff, UtilityPole } from 'lucide-react'
-import GenPanel from './Line'
 
 const GatewayPanel = () => {
+
     return (
         <div className='row panelContainer'>
             <GenPanel />
 
-            {/* style={{ backgroundColor: 'red' }} */}
-            {/* <OffButton style={{ color: isActive ? "lime" : "white" }} /> */}
             <div className="col-6 my-3 w-100 d-flex justify-content-between align-items-center">
                 <Fab className='p-2 bg-danger'>
                     <OffButton style={{ fill: 'white' }} width={40} height={40} />
@@ -40,7 +36,7 @@ const GatewayPanel = () => {
                     <SilentButton />
                 </Fab>
                 <Fab className='px-2 bg-success'>
-                    <OnButton style={{ fill: 'white' }} height={40}/>
+                    <OnButton style={{ fill: 'white' }} height={40} />
                 </Fab>
             </div>
 

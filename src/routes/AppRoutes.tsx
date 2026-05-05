@@ -23,7 +23,7 @@ export default function AppRoutes() {
             {/* aca van las demas rutas */}
             <Route path='/gensets' element={<GensetsPage />} />
             <Route path='/users' element={<UsersPage />} />
-            <Route path='/monitoring/:id' element={<MonitoringDashboard />} />
+            <Route path='/monitoring/:generatorId' element={<MonitoringDashboard />} />
             
         </Route>
 

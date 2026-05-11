@@ -1,6 +1,9 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import type { Genset } from "../genset.types";
-import { Info, SquarePen, Trash } from "lucide-react";
+import { Cog, MonitorCog, SquarePen, Trash } from "lucide-react";
+// PERMISOS
+import { Can } from "../../Auth/components/Can";
+import { PERMISSIONS } from "../../Auth/helpers/permissions";
 
 interface Props {
     onEdit: (genset: Genset) => void
@@ -33,26 +36,41 @@ export const gensetColumns = ({ onEdit, onDelete }: Props): ColumnDef<Genset>[] 
             return (
                 <div className="d-flex gap-2 justify-content-center">
 
-                    <button className="btn btn-sm btn-outline-warning" onClick={() => onEdit(genset)}>
-                        <SquarePen size={16} />
-                    </button>
+                    <Can permission={PERMISSIONS.GENSETS.UPDATE}>
+                        <button className="btn btn-sm btn-outline-warning" onClick={() => onEdit(genset)}>
+                            <SquarePen size={16} />
+                        </button>
+                    </Can>
 
                     {
                         onDelete &&
-                        <button
-                            className="btn btn-sm btn-outline-danger"
-                            onClick={() => onDelete(genset)}
-                        >
-                            <Trash size={16} />
-                        </button>
+                        <Can permission={PERMISSIONS.GENSETS.DELETE}>
+                            <button
+                                className="btn btn-sm btn-outline-danger"
+                                onClick={() => onDelete(genset)}
+                            >
+                                <Trash size={16} />
+                            </button>
+                        </Can>
                     }
 
                     <a
                         className="btn btn-sm btn-outline-primary"
                         href={`/monitoring/${genset.id}`}
                     >
-                        <Info size={16} />
+                        <MonitorCog size={16} />
                     </a>
+
+                    <Can permission={PERMISSIONS.GENSETS.DETAILS}>
+                        <a
+                            className="btn btn-sm btn-outline-warning"
+                            href={`/monitoring/${genset.id}`}
+                        >
+                            <Cog size={16} />
+                        </a>
+
+                    </Can>
+
 
                 </div>
             )

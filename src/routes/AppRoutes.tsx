@@ -3,9 +3,14 @@ import MainLayout from '../layouts/MainLayout'
 import LoginPage from '../features/Auth/pages/LoginPage'
 import GensetsPage from '../features/Gensets/pages/GensetPage'
 import UsersPage from '../features/Users/pages/UsersPage'
-import NotFoundPage from '../pages/NotFoundPage'
+import TemplatePage from '../features/Templates/pages/TemplatePage'
 import MonitoringDashboard from '../features/Monitoring/pages/MonitoringDashcboard'
+import NotFoundPage from '../pages/NotFoundPage'
+import ForbiddenPage from '../pages/ForbiddenPage'
+// COMPONENTES PARA VALIDACION DE PERMISOS
 import { ProtectedRoute } from '../features/Auth/components/ProtectedRoute'
+import { PermissionRoute } from '../features/Auth/components/PermissionRoute'
+import { PERMISSIONS } from '../features/Auth/helpers/permissions'
 
 export default function AppRoutes() {
   return (
@@ -21,13 +26,21 @@ export default function AppRoutes() {
             </ProtectedRoute>
           }
         >
-          {/* aca van las demas rutas */}
+          {/* RUTAS CON LA MISMA PLANTILLA */}
           <Route path='/gensets' element={<GensetsPage />} />
-          <Route path='/users' element={<UsersPage />} />
+
+          <Route path='/users' element={
+            <PermissionRoute permission={PERMISSIONS.USERS.VIEW}>
+              <UsersPage />
+            </PermissionRoute>
+          } />
+          
+          <Route path='/templates' element={<TemplatePage />} />
           <Route path='/monitoring/:generatorId' element={<MonitoringDashboard />} />
 
         </Route>
 
+        <Route path="/forbidden" element={<ForbiddenPage />} />
         <Route path="/notfound" element={<NotFoundPage />} />
         <Route path="*" element={<Navigate to="/notfound" />} />
       </Routes>

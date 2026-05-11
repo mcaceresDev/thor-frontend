@@ -6,6 +6,9 @@ import { userColumns } from "../helpers/userColumns"
 import type { User } from "../user.types"
 import { showConfirmDelete, showToast } from "../../../shared/alerts/alert.service"
 import { UserModalForm } from "../components/UserModalForm"
+// PERMISOS
+import { Can } from "../../Auth/components/Can"
+import { PERMISSIONS } from "../../Auth/helpers/permissions"
 
 const UsersPage = () => {
     const dispatch = useAppDispatch()
@@ -37,12 +40,14 @@ const UsersPage = () => {
                 <hr className="" />
 
             </div>
-            <button
-                className="btn btn-sm btn-warning"
-                onClick={() => dispatch(openModal(null))}
-            >
-                Agregar Nuevo
-            </button>
+            <Can permission={PERMISSIONS.USERS.CREATE}>
+                <button
+                    className="btn btn-sm btn-warning"
+                    onClick={() => dispatch(openModal(null))}
+                >
+                    Agregar Nuevo
+                </button>
+            </Can>
 
             {loading && <p>Cargando...</p>}
 

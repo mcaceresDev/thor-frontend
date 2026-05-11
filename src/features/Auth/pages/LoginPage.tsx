@@ -55,7 +55,7 @@ const LoginPage = () => {
 
                 <div className='my-3 d-flex flex-column justify-content-center align-items-center'>
                     <img className='logo' src={logo} alt="" />
-                    <h2 className='text-light fw-bold my-3'>Thor System</h2>
+                    <h2 className='text-warning fw-bold my-3'>Thor System</h2>
                 </div>
 
                 <form onSubmit={handleSubmit(onSubmit)} >

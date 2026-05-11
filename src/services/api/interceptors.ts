@@ -7,11 +7,24 @@ api.interceptors.response.use(
 
   async error => {
 
-    const originalRequest =
-      error.config
+    const originalRequest = error.config
 
+    // backend apagado
+    if (!error.response) {
+      return Promise.reject(error)
+    }
+
+    // evitar loop refresh
     if (
-      error.response?.status === 401 &&
+      originalRequest.url?.includes("/auth/refresh")
+    ) {
+
+      return Promise.reject(error)
+    }
+
+    // token expirado
+    if (
+      error.response.status === 401 &&
       !originalRequest._retry
     ) {
 
@@ -32,7 +45,7 @@ api.interceptors.response.use(
 
       } catch {
 
-        window.location.href = "/login"
+        return Promise.reject(error)
       }
     }
 

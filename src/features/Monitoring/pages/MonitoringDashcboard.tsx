@@ -22,7 +22,7 @@ export default function MonitoringDashboard() {
 
         const interval = setInterval(() => {
             dispatch(fetchDashboard(Number(generatorId)))
-        }, 5000)
+        }, 30000)
 
         return () => clearInterval(interval)
     }, [dispatch, generatorId])

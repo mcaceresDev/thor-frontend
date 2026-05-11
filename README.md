@@ -92,3 +92,13 @@ http://inss-mg2-genset1.internal.inss.org/co_inst_mod_xml.cgi
 		}
 	}
 }
+
+
+=====================================================================
+INFO PARA ENVIO DE CORREOS
+
+SMTP_HOST = mail.empresa.local
+SMTP_PORT = 25 | 587 | 465
+USER = usuario (a veces no necesario)
+PASSWORD = contraseña (si aplica)
+SECURE = true/false (TLS)

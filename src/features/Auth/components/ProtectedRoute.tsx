@@ -1,12 +1,13 @@
-import { Navigate }
-from "react-router-dom"
+import { Navigate } from "react-router-dom"
+import { useAppSelector } from "../../../app/hooks"
 
-import { useAppSelector }
-from "../../../app/hooks"
+interface Props {
+    children: React.ReactNode
+}
 
 export const ProtectedRoute = ({
   children
-}: any) => {
+}: Props) => {
 
   const isAuthenticated =
     useAppSelector(

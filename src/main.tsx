@@ -8,9 +8,9 @@ import App from './App.tsx'
 import "./services/api/interceptors.ts"
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+  // <StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
-  </StrictMode>,
+  // </StrictMode>,
 )

@@ -1,0 +1,57 @@
+/* ICON BUTTON */
+
+.icon-button {
+  background: none;
+  border: none;
+  position: relative;
+}
+
+.icon-button svg {
+  color: #555;
+}
+
+.icon-button .badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+
+  background: red;
+  color: white;
+  font-size: 11px;
+
+  border-radius: 50%;
+  padding: 3px 6px;
+}
+
+.dropdown-menu-custom {
+  position: absolute;
+  right: 0;
+  top: 40px;
+
+  background: #303030;
+
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+
+  min-width: 180px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+  padding: 8px 0;
+}
+
+.dropdown-item {
+  width: 100%;
+  border: none;
+  /* background: none; */
+
+  padding: 10px 15px;
+  text-align: left;
+}
+
+/* MENU */
+.sesion-menu {
+    max-height: 150px;
+    max-width: 400px;
+    overflow: scroll;
+}

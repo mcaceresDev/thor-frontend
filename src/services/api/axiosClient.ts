@@ -3,7 +3,9 @@ import type { AxiosRequestConfig } from "axios"
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
-  timeout: 10000
+  timeout: 10000,
+
+  withCredentials: true //para enviar cookies en cada solicitud, necesario para la autenticación basada en cookies
 })
 
 type ConfigParams = {
@@ -35,9 +37,12 @@ export async function request<T>({
     const err = error as AxiosError<any>
 
     if (err.response) {
-      throw err.response.data
+      // throw err.response.data
+      throw err
     }
 
     throw new Error("Network error")
   }
 }
+
+export default api

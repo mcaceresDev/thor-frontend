@@ -3,13 +3,15 @@ import gensetReducer from "../features/Gensets/gensetSlice"
 import userReducer from "../features/Users/userSlice"
 import monitorReducer from "../features/Monitoring/monitoringSlice"
 import dashboardReducer from "../features/Monitoring/dashboardSlice"
+import authReducer from "../features/Auth/authSlice"
 
 export const store = configureStore({
   reducer: {
     gensets: gensetReducer,
     users: userReducer,
     monitoring: monitorReducer,
-    dashboard: dashboardReducer
+    dashboard: dashboardReducer,
+    auth: authReducer
   }
 })
 
